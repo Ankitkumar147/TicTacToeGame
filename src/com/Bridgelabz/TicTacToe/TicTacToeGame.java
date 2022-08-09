@@ -13,6 +13,7 @@ public class TicTacToeGame {
         System.out.println("Welcome to the TicTacToe Game.");
         createBoard();
         characterChoice();
+        tossResult();
         showBoard();
         movePosition();
     }
@@ -29,13 +30,13 @@ public class TicTacToeGame {
         if (playerChoice == 'X') {
             computerChoice = 'O';
             playerChoice = 'X';
-            System.out.println("Player chose X so the computer choice is O");
+            System.out.println("\nPlayer chose X so the computer choice is O");
         } else if (playerChoice == 'O') {
             computerChoice = 'X';
             playerChoice = 'O';
-            System.out.println("Player chose O so the computer choice is X");
+            System.out.println("\nPlayer chose O so the computer choice is X");
         } else {
-            System.out.println("Choose Valid Character either X or O");
+            System.out.println("\nChoose Valid Character either X or O");
         }
     }
 
@@ -59,6 +60,16 @@ public class TicTacToeGame {
             }
         }
         showBoard();
+    }
+    public static void tossResult(){
+        double tossResult = Math.floor(Math.random()*10%2);
+        System.out.println("\nChoose 1 for Heads and 2 for Tails.");
+        int userChoice = sc1.nextInt();
+        if (userChoice == tossResult){
+            System.out.println("\nPlayer won the toss ! Player Start The Game\n" );
+        } else {
+            System.out.println("\nComputer won the Toss ! Computer Start The Game.\n");
+        }
     }
 }
 
