@@ -52,13 +52,13 @@ public class TicTacToeGame {
         System.out.println("Enter the position you want to move");
         int userPosition = sc1.nextInt();
         if (userPosition < 10 && userPosition > 0) {
-            board[userPosition] = playerChoice;
-        } else {
-            System.out.println("Invalid Choice. Choose between 1 & 9");
+            if (board[userPosition] == ' ') {
+                board[userPosition] = playerChoice;
+            } else {
+                System.out.println("Invalid Choice. Choose between 1 & 9");
+            }
         }
         showBoard();
     }
-
 }
-
 
